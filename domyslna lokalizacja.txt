@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/1424398/default-save-path-for-python-idle
