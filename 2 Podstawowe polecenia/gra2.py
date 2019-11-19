@@ -8,21 +8,25 @@ wylosowane = []
 while gramy == "tak":
     for i in range(6):
 
-        takiejJeszczeNieMa = 1
+        takaJuzJest = 0
         podana = 0;
-        while takiejJeszczeNieMa == 1:
+        while takaJuzJest == 0:
             podana = int(input("Podaj liczbę numer "+str(i+1)+": "))
+            znalazlem = 0
             for i in podane:
                 if i == podana:
-                    takiejJeszczeNieMa = 0;
+                    znalazlem = 1;
+            takaJuzJest = znalazlem;
         podane.append(podana)
-        takiejJeszczeNieMa = 1
+        takaJuzJest = 0
         wylosowana = 0;
-        while takiejJeszczeNieMa == 1:
+        while takaJuzJest == 0:
             wylosowana = random.randint(1,50)
+            znalazlem = 0
             for i in wylosowane:
                 if i == wylosowana:
-                    takiejJeszczeNieMa = 0;
+                    znalazlem = 1;
+            takaJuzJest = znalazlem;
         wylosowane.append(wylosowana)
     trafione = 0
     for z in podane:
