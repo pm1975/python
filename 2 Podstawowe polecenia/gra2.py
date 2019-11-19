@@ -7,26 +7,23 @@ wylosowane = []
 
 while gramy == "tak":
     for i in range(6):
-
-        takaJuzJest = 0
-        podana = 0;
-        while takaJuzJest == 0:
+        takaJuzJest = 1
+        podana = 0
+        while takaJuzJest == 1:
             podana = int(input("Podaj liczbę numer "+str(i+1)+": "))
-            znalazlem = 0
-            for i in podane:
-                if i == podana:
-                    znalazlem = 1;
-            takaJuzJest = znalazlem;
+            takaJuzJest = 0
+            for j in podane:
+                if j == podana:
+                    takaJuzJest = 1
         podane.append(podana)
-        takaJuzJest = 0
-        wylosowana = 0;
-        while takaJuzJest == 0:
+        takaJuzJest = 1
+        wylosowana = 0
+        while takaJuzJest == 1:
             wylosowana = random.randint(1,50)
-            znalazlem = 0
-            for i in wylosowane:
-                if i == wylosowana:
-                    znalazlem = 1;
-            takaJuzJest = znalazlem;
+            takaJuzJest = 0
+            for j in wylosowane:
+                if j == wylosowana:
+                    takaJuzJest = 1
         wylosowane.append(wylosowana)
     trafione = 0
     for z in podane:
