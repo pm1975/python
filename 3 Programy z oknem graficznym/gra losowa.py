@@ -17,6 +17,3 @@ def wstaw_przyciski():
             przyciski.append(Button(t, text = "kliknij mnie", command=pudlo))
     for i in przyciski:
         i.pack(fill=BOTH, expand=YES)
-        
-        
-    
