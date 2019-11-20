@@ -7,7 +7,6 @@ wylosowane = []
 
 while gramy == "tak":
     for i in range(6):
-
         takaJuzJest = 1
         podana = 0
         while takaJuzJest == 1:
