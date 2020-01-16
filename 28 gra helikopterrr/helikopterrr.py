@@ -1,5 +1,6 @@
 import pygame
 import os
+import random
 
 pygame.init()
 
@@ -14,7 +15,7 @@ def napisz(tekst, x, y, rozmiar) :
     #y = (wys - rend.get_rect().height)/2
     screen.blit(rend, (x,y))
 
-copokazuje = "menu"
+copokazuje = "rozrywka"
 
 class Przeszkoda():
     def __init__(self, x, szerokosc):
@@ -29,7 +30,8 @@ class Przeszkoda():
         self.ksztalt_gora = pygame.Rect(self.x, self.y_gora, self.szerokosc, self.wys_gora)
         self.ksztalt_dol = pygame.Rect(self.x, self.y_dol, self.szerokosc, self.wys_dol)
     def rysuj(self):
-        pygame.draw.rect(screen, self,kolor, self.ksztalt_gora, 0)
+        pygame.draw.rect(screen, self.kolor, self.ksztalt_gora, 0)
+        pygame.draw.rect(screen, self.kolor, self.ksztalt_dol, 0)
 
 przeszkody = []
 for i in range(21):
@@ -45,5 +47,8 @@ while True:
         napisz("Naciśnij spację, aby zacząć",80,150,20)
         grafika = pygame.image.load(os.path.join('logo.png'))
         screen.blit(grafika, (80,110))
+    elif copokazuje == "rozrywka":
+        for p in przeszkody:
+            p.rysuj()
 
     pygame.display.update()
