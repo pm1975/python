@@ -16,6 +16,17 @@ def napisz(tekst, x, y, rozmiar) :
 
 copokazuje = "menu"
 
+class Przeszkoda():
+    def __init__(self, x, szerokosc):
+        self.x = x
+        self.szerokosc = szerokosc
+        self.y_gora = 0
+        self.wys_gora = random.randint(150,250)
+        self.odstep = 200
+        self.y_dol = self.wys_gora + self.odstep
+        self.wys_dol = wys - self.y_dol
+        self.kolor = (160,140,190)
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
