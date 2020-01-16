@@ -26,6 +26,14 @@ class Przeszkoda():
         self.y_dol = self.wys_gora + self.odstep
         self.wys_dol = wys - self.y_dol
         self.kolor = (160,140,190)
+        self.ksztalt_gora = pygame.Rect(self.x, self.y_gora, self.szerokosc, self.wys_gora)
+        self.ksztalt_dol = pygame.Rect(self.x, self.y_dol, self.szerokosc, self.wys_dol)
+    def rysuj(self):
+        pygame.draw.rect(screen, self,kolor, self.ksztalt_gora, 0)
+
+przeszkody = []
+for i in range(21):
+    przeszkody.append(Przeszkoda(i*szer/20,szer/20))
 
 while True:
     for event in pygame.event.get():
