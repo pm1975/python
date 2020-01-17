@@ -37,6 +37,15 @@ class Przeszkoda():
         self.ksztalt_gora = pygame.Rect(self.x, self.y_gora, self.szerokosc, self.wys_gora)
         self.ksztalt_dol = pygame.Rect(self.x, self.y_dol, self.szerokosc, self.wys_dol)
 
+class Helikopter():
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.wysokosc = 30
+        self.szerokosc = 50
+        self.ksztalt = pygame.Rect(self.x, self,y, self.szerokosc, self.wysokosc)
+        self.grafika = pygame.image.load(os.path.join('helikopter.png'))
+
 przeszkody = []
 for i in range(21):
     przeszkody.append(Przeszkoda(i*szer/20,szer/20))
