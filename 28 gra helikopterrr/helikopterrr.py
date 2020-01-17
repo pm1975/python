@@ -32,6 +32,10 @@ class Przeszkoda():
     def rysuj(self):
         pygame.draw.rect(screen, self.kolor, self.ksztalt_gora, 0)
         pygame.draw.rect(screen, self.kolor, self.ksztalt_dol, 0)
+    def ruch(self, v):
+        self.x = self.x - v
+        self.ksztalt_gora = pygame.Rect(self.x, self.y_gora, self.szerokosc, self.wys_gora)
+        self.ksztalt_dol = pygame.Rect(self.x, self.y_dol, self.szerokosc, self.wys_dol)
 
 przeszkody = []
 for i in range(21):
@@ -43,12 +47,18 @@ while True:
             pygame.quit()
             quit()
 
+    screen.fill((0,0,0))
     if copokazuje == "menu":
         napisz("Naciśnij spację, aby zacząć",80,150,20)
         grafika = pygame.image.load(os.path.join('logo.png'))
         screen.blit(grafika, (80,110))
     elif copokazuje == "rozrywka":
         for p in przeszkody:
+            p.ruch(1)
             p.rysuj()
+        for p in przeszkody:
+            if p.x <= -p.szerokosc:
+                przeszkody.remove(p)
+                przeszkody.append((Przeszkoda(szer, szer/20)))
 
     pygame.display.update()
